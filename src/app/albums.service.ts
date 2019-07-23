@@ -10,7 +10,7 @@ export class Albums {
   constructor(private http: HttpClient) { }
 
   public getAlbums() {
-    return this.http.get<IAlbum>('https://jsonplaceholder.typicode.com/photos');
+    return this.http.get<IAlbum[]>('https://jsonplaceholder.typicode.com/photos');
   }
 
   public getPhotos(albumId: number, count: number) {
@@ -19,7 +19,7 @@ export class Albums {
 }
 
 
-interface IAlbum {
+export interface IAlbum {
   albumId: number;
   id: number;
   title: number;
